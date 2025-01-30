@@ -1,4 +1,4 @@
-import psycopg2
+import psycopglet2
 import os
 from parse_edi import parse_edi_file
 
