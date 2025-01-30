@@ -1,0 +1,9 @@
+# EDI ETL Pipeline Cron Jobs
+# Run parsing at 3:00 AM daily
+0 3 * * * python3 /home/chris/projects/edi_integration/scripts/parse_edi.py >> /home/chris/projects/edi_integration/logs/cron_parse.log 2>&1
+
+# Run validation at 3:10 AM daily
+10 3 * * * python3 /home/chris/projects/edi_integration/scripts/validate_data.py >> /home/chris/projects/edi_integration/logs/cron_validate.log 2>&1
+
+# Run transformation at 3:20 AM daily
+20 3 * * * python3 /home/chris/projects/edi_integration/scripts/transform_data.py >> /home/chris/projects/edi_integration/logs/cron_transform.log 2>&1
